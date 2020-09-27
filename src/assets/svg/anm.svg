@@ -1,0 +1,6 @@
+<svg width="78" height="93" viewBox="0 0 78 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M39 4L77 26V70L39 92L1 70V26L39 4Z" stroke="white" stroke-width="0.2"/>
+<circle cx="0" cy="0" r="1.5" fill="white">
+<animateMotion path="M39 4L77 26V70L39 92L1 70V26L39 4Z" stroke="white" stroke-width="0.2" begin="0s" dur="10s" repeatCount="indefinite"/>
+</circle>
+</svg>

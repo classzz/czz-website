@@ -1,0 +1,10 @@
+<svg width="80" height="81" viewBox="0 0 80 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="40" cy="36" r="35.5" stroke="black" stroke-dasharray="2 2"/>
+<path d="M15 30C15 24.4771 19.4772 20 25 20H55C60.5228 20 65 24.4772 65 30V59.146C65 62.6337 63.1828 65.8695 60.2046 67.6848L40 80L19.7954 67.6848C16.8172 65.8695 15 62.6337 15 59.146V30Z" fill="#F3F7FF" stroke="black"/>
+<path d="M15 48.4453L65 34V42.5547L15 57V48.4453Z" stroke="black"/>
+<path d="M15 43.4453L65 29V37.5547L15 52V43.4453Z" fill="white" stroke="black"/>
+
+<circle cx="0" cy="0" r="4" fill="black">
+<animateMotion path="M15 30C15 24.4771 19.4772 20 25 20H55C60.5228 20 65 24.4772 65 30V59.146C65 62.6337 63.1828 65.8695 60.2046 67.6848L40 80L19.7954 67.6848C16.8172 65.8695 15 62.6337 15 59.146V30Z"  begin="0s" dur="10s" repeatCount="indefinite"/>
+</circle>
+</svg>
