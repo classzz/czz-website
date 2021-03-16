@@ -20,8 +20,8 @@ function Icon({icon}) {
 const links = [
   {name: 'github', link: 'https://github.com/classzz'},
   // {name:'kakaotalk',link:''},
-  {name: 'telegram', link: 'https://t.me/classzz'},
-  {name: 'twitter', link: 'https://twitter.com/CzzDev'},
+  {name: 'telegram', link: 'https://t.me/classzzoffical'},
+  {name: 'twitter', link: 'https://www.twitter.com/class_zz'},
   {name: 'czzclub', link: 'http://czz.club'},
 ]
 
