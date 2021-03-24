@@ -1,44 +1,48 @@
-import React, {Suspense, lazy, useEffect} from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom'
-import {Header, Footer} from './Common'
-import init from './hox'
-import PagePlaceholder from 'component/pagePlaceholder'
-const Homes = lazy(() => import('./Homes'))
-const StateInfo = lazy(() => import('./StateInfo'))
-const NotFound = lazy(() => import('./NotFound'))
+import React, {Suspense} from 'react'
+import {AppProvider} from './context/state'
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
+import {useLocalStorageState} from 'ahooks'
+import Authorization from './pages/authorization/index'
+import Home from './pages/Home/index'
+import routes from './routes'
+import './assets/icon.scss'
+import './pages/home/style.scss'
 
-function App() {
-  const {page, getRate, resRate, setLang, data} = init()
-  //init page data
-  useEffect(() => {
-    // const {search} = window.location
-    // const paramsString = search.substring(1)
-    // const searchParams = new URLSearchParams(paramsString)
-    // setLang(searchParams.get('lang') || 1)
-    // setPage(data[searchParams.get('lang') || lang])
-    getRate()
-    // resRate()
-  }, [])
+export default function App() {
+  const [accessToken] = useLocalStorageState('accessToken')
+  // const pages = routes.map((item, index) => {
+  //   const {compontent: Page, ...rest} = item
+
+  //   return (
+  //     <Route
+  //       {...rest}
+  //       key={index}
+  //       render={routerProps => {
+  //         const redirectProps = {
+  //           pathname: '/authorization',
+  //         }
+  //         return accessToken ? (
+  //           <Page {...rest} {...routerProps} />
+  //         ) : (
+  //           <Redirect to={redirectProps} />
+  //         )
+  //       }}
+  //     />
+  //   )
+  // })
 
   return (
-    <Router>
-      <div className="czz">
-        <Suspense fallback={<PagePlaceholder />}>
-          <Header />
-          <Switch>
-            <Route path="/" exact component={props => <Homes {...props} />} />
-            <Route path="/beacon" component={props => <StateInfo {...props} />} />
-            <Route component={props => <NotFound {...props} />} />
-          </Switch>
-          <Footer />
-        </Suspense>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <AppProvider>
+        <Switch>
+          <Route exact path="/">
+            {accessToken ? <Home /> : <Redirect to="/authorization" />}
+          </Route>
+          <Route exact="false" path="/authorization">
+            <Authorization />
+          </Route>
+        </Switch>
+      </AppProvider>
+    </BrowserRouter>
   )
 }
-
-export default App
